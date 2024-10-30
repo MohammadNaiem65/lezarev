@@ -17,6 +17,7 @@ nav {
     position: fixed;
     display: flex;
     justify-content: space-between;
+    z-index: 9;
 }
 
 nav h2 {
@@ -81,6 +82,7 @@ nav button svg {
     width: 100%;
     height: 100dvh;
     background: #000;
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -114,3 +116,52 @@ nav button svg {
     padding: 0.2rem 0.5rem;
     border-radius: 50px;
 }
+
+#banner-carousel {
+    width: 50%;
+    position: absolute;
+    bottom: 10%;
+    overflow: hidden;
+}
+
+#banner-carousel > div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    animation: banner-carousel 30s linear infinite;
+}
+
+#banner-carousel img {
+    width: 6rem;
+}
+
+.banner-carousel-shadow {
+    height: 100%;
+    width: 10%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.shadow-left {
+    left: 0;
+    background: linear-gradient(to right, #000, transparent);
+}
+
+.shadow-right {
+    right: 0;
+    background: linear-gradient(to left, #000, transparent);
+}
+
+@keyframes banner-carousel {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
