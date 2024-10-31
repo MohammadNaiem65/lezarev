@@ -56,4 +56,54 @@ function navbarAnimation() {
         });
 }
 
+function serviceSectionAnimation() {
+    const serviceRows = document.querySelectorAll('.service-row');
+
+    serviceRows.forEach((row) => {
+        row.addEventListener('mouseenter', () => {
+            console.log(row.children[4]);
+            gsap.to(row, {
+                paddingLeft: '1rem',
+                paddingRight: '1rem',
+            });
+            gsap.to(row.children[3], {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+            });
+            gsap.to(row.children[4], {
+                transform: 'scaleY(1)',
+                transformOrigin: 'top',
+            });
+        });
+
+        row.addEventListener('mousemove', (e) => {
+            gsap.to(row.children[3], {
+                x: e.x - row.getBoundingClientRect().x - 80,
+                y: e.y - row.getBoundingClientRect().y - 90,
+                duration: 0.5,
+            });
+        });
+
+        row.addEventListener('mouseleave', () => {
+            console.log(row.children[4]);
+            gsap.to(row, {
+                paddingLeft: '0rem',
+                paddingRight: '0rem',
+            });
+            gsap.to(row.children[3], {
+                opacity: 0,
+                scale: 0,
+                duration: 0.5,
+            });
+            gsap.to(row.children[4], {
+                transform: 'scaleY(0)',
+                transformOrigin: 'bottom',
+            });
+        });
+    });
+}
+
+// Call the functions
 navbarAnimation();
+serviceSectionAnimation();

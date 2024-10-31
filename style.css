@@ -8,6 +8,10 @@
     color: #fff;
 }
 
+body {
+    background: #000;
+}
+
 /* Navbar */
 nav {
     width: 100%;
@@ -81,7 +85,6 @@ nav button svg {
 .banner {
     width: 100%;
     height: 100dvh;
-    background: #000;
     position: relative;
 
     display: flex;
@@ -165,3 +168,105 @@ nav button svg {
     }
 }
 
+.service-section {
+    width: 100%;
+    min-height: 100dvh;
+    padding-inline: 8rem;
+    padding-top: 8rem;
+    border-top: 1px solid #333;
+    display: flex;
+}
+
+.service-section-left {
+    width: 28%;
+    position: relative;
+}
+
+.service-section-left button {
+    width: 14.5rem;
+    padding: 1rem 2rem;
+    border: 0;
+    outline: 0;
+    border-radius: 5rem;
+    font-weight: 600;
+    background: #0ca24e;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    position: sticky;
+    top: 20%;
+}
+
+.service-section-left button svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.service-section-right {
+    width: 72%;
+}
+
+.service-section-heading {
+    padding-bottom: 5rem;
+    border-bottom: 1px solid #fff;
+}
+
+.service-section-heading p {
+    width: 18rem;
+    margin-top: 01rem;
+    float: left;
+}
+
+.service-section-heading h3 {
+    font-size: 2.4rem;
+}
+
+.service-row {
+    padding-block: 1.8rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    position: relative;
+    isolation: isolate;
+}
+
+.service-row h3 {
+    width: 18rem;
+    font-size: 1.5rem;
+}
+
+.service-row p {
+    width: 30rem;
+}
+
+.service-row > div {
+    flex-grow: 1;
+}
+
+.service-row-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-left: auto;
+}
+
+.service-img {
+    width: 8.5rem;
+    height: 8.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    scale: 0;
+}
+
+.overlay {
+    border-bottom: 1px solid #333;
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: #222;
+    transform: scaleY(0);
+}
